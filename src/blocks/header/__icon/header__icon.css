@@ -1,0 +1,8 @@
+.header__icon {
+  background-image: url('../../../images/exit.svg');
+  width: 17.5px;
+  height: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 6px 0 0 16px;
+}

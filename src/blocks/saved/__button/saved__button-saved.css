@@ -1,0 +1,9 @@
+.saved__button-saved {
+  text-decoration: none;
+  color: black;
+  margin: 0 42px 0 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+}

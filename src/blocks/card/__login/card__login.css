@@ -1,0 +1,17 @@
+.card__login {
+  display: none;
+  text-align: center;
+  width: 142px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bolder;
+  line-height: 14.06px;
+  position: absolute;
+  cursor: pointer;
+  padding: 0 20px;
+  left: 149px;
+  height: 40px;
+  top: 24px;
+  transition: linear 0.2s;
+  background-color: #ffffff;
+}

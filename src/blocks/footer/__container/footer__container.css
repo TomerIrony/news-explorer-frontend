@@ -1,0 +1,7 @@
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  width: 33%;
+  font-size: 18px;
+  line-height: 24px;
+}

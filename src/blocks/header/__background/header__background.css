@@ -1,0 +1,7 @@
+.header__background {
+  background-image: url('../../../images/headerbackground.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}

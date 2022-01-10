@@ -1,0 +1,8 @@
+.about__image {
+  background-image: url('../../../images/image-03.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 464px;
+  height: 464px;
+  margin: 0 0 0 104px;
+}

@@ -1,0 +1,19 @@
+.header__form-input {
+  padding: 20px;
+  width: 588px;
+  height: 64px;
+  border-radius: 100px;
+  background-color: white;
+  border: 1px solid #d1d2d6;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+}
+.header__form-input:focus {
+  outline: none;
+}
+
+.header__form-input::placeholder {
+  color: #b6bcbf;
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+}

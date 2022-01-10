@@ -1,0 +1,30 @@
+.card__button-saved {
+  display: block;
+  background: url(../../../images/delete.svg) no-repeat center center;
+  border: none;
+  padding: 20px;
+  width: 18px;
+  border-radius: 8px;
+  height: 18px;
+  position: absolute;
+  cursor: pointer;
+  right: 16px;
+  top: 24px;
+  transition: linear 0.2s;
+  background-color: #ffffff;
+}
+
+.card__button-saved:hover {
+  background: url(../../../images/deleteHover.svg) no-repeat center center;
+  border: none;
+  padding: 20px;
+  width: 18px;
+  border-radius: 8px;
+  height: 18px;
+  position: absolute;
+  cursor: pointer;
+  right: 16px;
+  top: 24px;
+  transition: linear 0.2s;
+  background-color: #ffffff;
+}

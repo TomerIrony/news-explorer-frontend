@@ -1,0 +1,6 @@
+.footer__github {
+  background-image: url('../../../images/Vector.svg');
+  width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

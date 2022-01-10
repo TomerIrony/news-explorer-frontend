@@ -1,0 +1,10 @@
+.form__input-title {
+  color: #2f71e5;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 15px 0 9px;
+}
+
+.form__input-title:first-of-type {
+  padding: 0 0 9px;
+}
