@@ -1,6 +1,6 @@
 .card {
   margin: 0;
-  width: 400px;
+  max-width: 400px;
   height: 576px;
   overflow: hidden;
   border-radius: 10px;
@@ -15,9 +15,24 @@
   position: relative;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 769px) {
   .card {
-    width: 282px;
+    width: 224px;
+    height: max-content;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .card {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+}
+
+@media screen and (max-width: 506px) {
+  .card {
+    width: 100%;
+    margin: 10px auto 0;
   }
 }

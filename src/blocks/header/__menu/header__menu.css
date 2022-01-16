@@ -1,0 +1,8 @@
+.header__menu {
+  background-image: url('../../../images/menu.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  background-position: center center;
+}

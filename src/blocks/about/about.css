@@ -4,3 +4,25 @@
   /* justify-content: center; */
   /* align-items: center; */
 }
+
+@media screen and (max-width: 1023px) {
+  .about {
+    padding: 0;
+    height: 354px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about {
+    padding: 0;
+    height: 354px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .about {
+    flex-direction: column;
+    padding: 0;
+    height: 752px;
+  }
+}

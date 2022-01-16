@@ -5,3 +5,12 @@
   position: absolute;
   bottom: 24px;
 }
+@media screen and (max-width: 710px) {
+  .card__source {
+    color: #b6bcbf;
+    font-size: 16px;
+    margin: 0;
+    position: relative;
+    margin: 25px 0 0 0;
+  }
+}

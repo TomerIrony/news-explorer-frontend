@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Card(props) {
   const [saveCardPopup, setSaveCardPopup] = useState(false);
-  const [deleteCardPopup, setDeleteCardPopup] = useState(false);
+  const [mobileMode, setMobileMode] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 870) {
+      setMobileMode(true);
+    }
+  }, []);
+
   return (
     <article className="card">
       <button
@@ -16,20 +23,23 @@ function Card(props) {
       />
       {props.cameFromSaved ? (
         <>
-          <div
-            className={`card__login ${
-              saveCardPopup ? `card__login-show` : null
-            }`}
-          >
-            <p
-              onClick={() => {
-                /* props.setIsLoggedInFormOpen(true); */
-                return;
-              }}
+          {mobileMode ? null : (
+            <div
+              className={`card__login ${
+                saveCardPopup ? `card__login-show` : null
+              }`}
             >
-              Remove from saved
-            </p>
-          </div>
+              <p
+                onClick={() => {
+                  /* props.setIsLoggedInFormOpen(true); */
+                  return;
+                }}
+              >
+                Remove from saved
+              </p>
+            </div>
+          )}
+
           <div className="card__keyword">
             <p>Nature</p>
           </div>

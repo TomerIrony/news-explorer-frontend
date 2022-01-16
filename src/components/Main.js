@@ -3,6 +3,8 @@ import Header from './Header';
 import About from './About';
 import Footer from './Footer';
 import Search from './Search';
+import FooterMobile from './FooterMobile';
+import { Navigate } from 'react-router-dom';
 
 function Main(props) {
   function handleLogInClick() {
@@ -16,6 +18,7 @@ function Main(props) {
   return (
     <>
       <Header
+        screenWidth={props.screenWidth}
         onLogInClick={handleLogInClick}
         logOut={handleLogOut}
         loggedIn={props.loggedIn}
@@ -28,12 +31,8 @@ function Main(props) {
           loggedIn={props.loggedIn}
         />
       ) : null}
-      {/*  <Search
-        setIsLoggedInFormOpen={props.setIsLoggedInFormOpen}
-        loggedIn={props.loggedIn}
-      /> */}
       <About />
-      <Footer />
+      {props.screenWidth > 740 ? <Footer /> : <FooterMobile />}
     </>
   );
 }

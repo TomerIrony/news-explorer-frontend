@@ -1,0 +1,8 @@
+.header__menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 89%;
+  margin: 0 auto;
+  height: 66px;
+}

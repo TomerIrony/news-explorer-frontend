@@ -1,5 +1,6 @@
 .root {
-  width: 1440px;
+  max-width: 1440px;
+  min-width: 320px;
   margin: 0 auto;
   font-family: 'Roboto Slab', serif;
 }

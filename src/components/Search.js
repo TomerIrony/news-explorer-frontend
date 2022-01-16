@@ -8,10 +8,10 @@ function Search(props) {
   return (
     <div className="search">
       {props.cameFromSaved ? null : (
-        <h1 className="search__header">Search results</h1>
+        <h2 className="search__header">Search results</h2>
       )}
 
-      <div className={props.cameFromSaved ? 'elements__saved' : 'elements'}>
+      <div className="elements__saved">
         <Card
           setIsLoggedInFormOpen={props.setIsLoggedInFormOpen}
           loggedIn={props.loggedIn}

@@ -16,6 +16,11 @@ function App() {
   const [button, setButton] = useState(true);
   const [validationMessage, setValidationMessage] = useState();
   const [searchShow, setSearchShow] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  window.addEventListener('resize', () => {
+    setScreenWidth(window.innerWidth);
+  });
 
   React.useEffect(() => {
     if (localStorage.getItem('jwt') !== null) {
@@ -118,7 +123,13 @@ function App() {
       <Routes>
         <Route
           path="/saved-news"
-          element={<ProtectedRoute path="/saved-news" loggedIn={loggedIn} />}
+          element={
+            <ProtectedRoute
+              path="/saved-news"
+              screenWidth={screenWidth}
+              loggedIn={loggedIn}
+            />
+          }
         >
           <Route
             element={
@@ -142,6 +153,7 @@ function App() {
               currentUser={currentUser}
               setSearchShow={setSearchShow}
               searchShow={searchShow}
+              screenWidth={screenWidth}
             />
           }
         />

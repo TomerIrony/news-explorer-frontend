@@ -5,7 +5,6 @@ import Search from './Search';
 import Temp from './Temp';
 
 function SavedNews(props) {
-  const [cameFromSaved, setCameFromSaved] = useState(true);
   function handleLogInClick() {
     props.setIsLoggedInFormOpen(true);
   }
@@ -21,9 +20,10 @@ function SavedNews(props) {
         logOut={handleLogOut}
         loggedIn={props.loggedIn}
         currentUser={props.currentUser}
+        screenWidth={props.screenWidth}
       />
       <Temp currentUser={props.currentUser} />
-      <Search loggedIn={props.loggedIn} cameFromSaved={cameFromSaved} />
+      <Search loggedIn={props.loggedIn} cameFromSaved={true} />
       <Footer />
     </>
   );

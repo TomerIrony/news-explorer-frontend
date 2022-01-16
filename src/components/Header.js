@@ -1,94 +1,62 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
+import Navigation from './Navigation';
+import NavigationMobile from './NavigationMobile';
+import Menu from './Menu';
 
 function Header(props) {
   const [location, setLocation] = useState('home');
+  const [menuState, setMenuState] = useState(false);
 
   return (
-    <div className="header header__background">
-      <div className="header__home">
-        <span className="header__title">NewsExplorer</span>
-        <div className="header__buttons">
-          <Link
-            className={
-              location === 'home'
-                ? 'header__buttons-home'
-                : 'header__buttons-home header__buttons-disable'
-            }
-            to={{ pathname: '/' }}
-            onClick={() => {
-              setLocation('home');
-            }}
-          >
-            <span>Home</span>
-          </Link>
-          {props.loggedIn ? (
-            <Link
-              className={
-                location === 'saved-news'
-                  ? 'header__buttons-saved'
-                  : 'header__buttons-saved header__buttons-disable'
-              }
-              to={{ pathname: '/saved-news' }}
-              onClick={() => {
-                setLocation('saved-news');
-              }}
-            >
-              <span>Saved articles</span>
-            </Link>
+    <>
+      <div className="header">
+        <div className="header__background">
+          {menuState ? (
+            <Menu
+              loggedIn={props.loggedIn}
+              location={location}
+              onLogInClick={props.onLogInClick}
+              setMenuState={setMenuState}
+              logOut={props.logOut}
+            />
           ) : null}
-
-          {props.loggedIn ? (
-            <div className="header__sign">
-              <span onClick={() => props.logOut()}>
-                {props.currentUser.name}
-              </span>
-              <div className="header__icon"></div>
-            </div>
-          ) : (
-            <span className="header__sign" onClick={() => props.onLogInClick()}>
-              Sign in
-            </span>
+          <div className="header__home">
+            {props.screenWidth > 740 ? (
+              <Navigation
+                location={location}
+                onLogInClick={props.onLogInClick}
+                logOut={props.logOut}
+                setLocation={setLocation}
+                loggedIn={props.loggedIn}
+                currentUser={props.currentUser}
+              />
+            ) : (
+              <NavigationMobile
+                setMenuState={setMenuState}
+                location={location}
+                onLogInClick={props.onLogInClick}
+                logOut={props.logOut}
+                setLocation={setLocation}
+                loggedIn={props.loggedIn}
+                currentUser={props.currentUser}
+              />
+            )}
+          </div>
+          {(location === 'saved-news') & props.loggedIn ? (
+            <div className="header__highlight" />
+          ) : null}
+          {(location === 'home') & props.loggedIn ? (
+            <div className="header__highlight-home" />
+          ) : location === 'saved-news' ? null : (
+            <div className="header__highlight-home-logged-out" />
           )}
+          <div className="header__underline" />
+
+          <SearchBar setSearchShow={props.setSearchShow} />
         </div>
       </div>
-      {(location === 'saved-news') & props.loggedIn ? (
-        <div className="header__highlight" />
-      ) : null}
-      {(location === 'home') & props.loggedIn ? (
-        <div className="header__highlight-home" />
-      ) : location === 'saved-news' ? null : (
-        <div className="header__highlight-home-logged-out" />
-      )}
-      <div className="header__underline" />
-      <div className="header__search">
-        <h1 className="header__headline">What's going on in the world?</h1>
-        <p className="header__text">
-          Find the latest news on any topic and save them in your personal
-          account.
-        </p>
-        <form
-          action="/"
-          className="header__form"
-          onSubmit={(e) => {
-            e.preventDefault();
-            props.setSearchShow(true);
-          }}
-        >
-          <fieldset className="header__form-fieldset">
-            <input
-              className="header__form-input"
-              type="text"
-              placeholder="Enter topic"
-              required
-            />
-            <button type="submit" className="header__form-btn">
-              Search
-            </button>
-          </fieldset>
-        </form>
-      </div>
-    </div>
+    </>
   );
 }
 

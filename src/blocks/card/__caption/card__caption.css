@@ -1,3 +1,15 @@
 .card__caption {
   max-width: 352px;
 }
+
+@media screen and (max-width: 769px) {
+  .card__caption {
+    max-width: 192px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .card__caption {
+    max-width: 256px;
+  }
+}

@@ -4,3 +4,8 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+@media screen and (max-width: 740px) {
+  .footer__github {
+    margin: 0 28px 0 0;
+  }
+}

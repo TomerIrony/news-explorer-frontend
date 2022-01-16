@@ -5,3 +5,22 @@
   line-height: 21px;
   font-weight: normal;
 }
+
+@media screen and (max-width: 769px) {
+  .card__text {
+    margin: 10px 0 0 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    max-height: 88px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .card__text {
+    margin: 14 0 0 0;
+    max-height: 88px;
+  }
+}
