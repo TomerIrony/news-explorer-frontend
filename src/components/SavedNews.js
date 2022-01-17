@@ -3,6 +3,7 @@ import SavedNewsHeader from './SavedNewsHeader';
 import Footer from './Footer';
 import Search from './Search';
 import Temp from './Temp';
+import FooterMobile from './FooterMobile';
 
 function SavedNews(props) {
   function handleLogInClick() {
@@ -24,7 +25,7 @@ function SavedNews(props) {
       />
       <Temp currentUser={props.currentUser} />
       <Search loggedIn={props.loggedIn} cameFromSaved={true} />
-      <Footer />
+      {props.screenWidth > 740 ? <Footer /> : <FooterMobile />}
     </>
   );
 }

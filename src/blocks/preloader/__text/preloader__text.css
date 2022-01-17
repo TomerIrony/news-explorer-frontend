@@ -1,0 +1,10 @@
+.preloader__text {
+  max-width: 280px;
+  position: absolute;
+  right: 0;
+  color: #b6bcbf;
+  left: 0;
+  bottom: 80px;
+  text-align: center;
+  margin: auto;
+}

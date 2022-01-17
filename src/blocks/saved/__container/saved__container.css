@@ -1,5 +1,6 @@
 .saved__container {
-  margin: 40px 0 56px 0;
+  margin: 40px auto 56px;
+  max-width: 90%;
 }
 
 @media screen and (max-width: 769px) {

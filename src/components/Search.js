@@ -6,7 +6,7 @@ import card3 from '../images/card3.jpg';
 
 function Search(props) {
   return (
-    <div className="search">
+    <div className={props.cameFromSaved ? 'search__saved' : 'search'}>
       {props.cameFromSaved ? null : (
         <h2 className="search__header">Search results</h2>
       )}

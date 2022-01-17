@@ -8,11 +8,13 @@ function SearchBar(props) {
   }
   return (
     <div className="header__search">
-      <h1 className="header__headline">What's going on in the world?</h1>
-      <p className="header__text">
-        Find the latest news on any topic and save them in your personal
-        account.
-      </p>
+      <div className="header__container">
+        <h1 className="header__headline">What's going on in the world?</h1>
+        <p className="header__text">
+          Find the latest news on any topic and save them in your personal
+          account.
+        </p>
+      </div>
       <form
         action="/"
         className="header__form"
@@ -32,9 +34,7 @@ function SearchBar(props) {
           />
           <button
             type="submit"
-            className={
-              buttonState ? 'header__form-btn' : 'header__form-btn-disabled'
-            }
+            className={buttonState ? 'header__form-btn' : 'header__form-btn'}
             disabled={buttonState ? false : true}
           >
             Search

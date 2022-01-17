@@ -5,6 +5,8 @@ import Footer from './Footer';
 import Search from './Search';
 import FooterMobile from './FooterMobile';
 import { Navigate } from 'react-router-dom';
+import NothingFound from './NothingFound';
+import Preloader from './Preloader';
 
 function Main(props) {
   function handleLogInClick() {
@@ -31,6 +33,8 @@ function Main(props) {
           loggedIn={props.loggedIn}
         />
       ) : null}
+      <NothingFound />
+      <Preloader />
       <About />
       {props.screenWidth > 740 ? <Footer /> : <FooterMobile />}
     </>

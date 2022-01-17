@@ -29,7 +29,7 @@ function InfoTooltip(props) {
             <p className="form__validation_show form__error">
               {props.validationMessage}
             </p>
-            <div className="form__sign">
+            <div className="form__sign-register">
               <p>
                 <span
                   className="form__sign-link"

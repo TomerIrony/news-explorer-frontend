@@ -18,7 +18,8 @@
 @media screen and (max-width: 769px) {
   .card {
     width: 224px;
-    height: max-content;
+    height: 420px;
+    /* height: max-content; */
     margin: 0 auto;
   }
 }
@@ -26,13 +27,15 @@
 @media screen and (max-width: 740px) {
   .card {
     width: 100%;
+    height: 500px;
     margin: 0 0 10px 0;
   }
 }
 
-@media screen and (max-width: 506px) {
+@media screen and (max-width: 710px) {
   .card {
     width: 100%;
+    height: max-content;
     margin: 10px auto 0;
   }
 }

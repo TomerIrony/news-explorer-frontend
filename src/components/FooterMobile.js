@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function FooterMobile(props) {
   return (
     <>
-      <div className="footer">
+      <footer className="footer">
         <div className="footer__container">
           <Link className="footer__link" to="/">
             <div>Home</div>
@@ -37,7 +37,7 @@ function FooterMobile(props) {
             <div />
           </a>
         </div>
-      </div>
+      </footer>
       <p className="footer__power">© 2021 Supersite, Powered by News API</p>
     </>
   );
