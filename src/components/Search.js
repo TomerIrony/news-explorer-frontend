@@ -18,6 +18,7 @@ function Search(props) {
           src={card1}
           cameFromSaved={props.cameFromSaved}
           date="November 4, 2020"
+          marked={true}
         />
         <Card
           setIsLoggedInFormOpen={props.setIsLoggedInFormOpen}

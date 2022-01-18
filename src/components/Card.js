@@ -2,28 +2,37 @@ import React, { useState, useEffect } from 'react';
 
 function Card(props) {
   const [saveCardPopup, setSaveCardPopup] = useState(false);
-  const [mobileMode, setMobileMode] = useState(false);
+  const [mobileMode, setMobileMode] = useState();
 
-  useEffect(() => {
-    if (window.innerWidth < 870) {
-      setMobileMode(true);
-    }
-  }, []);
+  window.addEventListener('resize', () => {
+    setMobileMode(window.innerWidth);
+  });
 
   return (
     <article className="card">
       <button
-        className={props.cameFromSaved ? 'card__button-saved' : 'card__button'}
+        className={
+          props.cameFromSaved
+            ? 'card__button-saved'
+            : props.marked
+            ? 'card__marked'
+            : 'card__button'
+        }
         type="button"
         aria-label="card save"
         id="cardSave"
+        onMouseEnter={() => {
+          setSaveCardPopup(true);
+        }}
         onClick={() => {
-          setSaveCardPopup(!saveCardPopup);
+          if (saveCardPopup) {
+            setSaveCardPopup(false);
+          }
         }}
       />
       {props.cameFromSaved ? (
         <>
-          {mobileMode ? null : (
+          {mobileMode < 884 || mobileMode === undefined ? null : (
             <div
               className={`card__login ${
                 saveCardPopup ? `card__login-show` : null
