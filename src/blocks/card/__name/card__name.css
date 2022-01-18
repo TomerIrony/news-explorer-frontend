@@ -1,0 +1,28 @@
+.card__name {
+  font-size: 26px;
+  color: #1a1b22;
+  line-height: 30px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 500;
+  margin: 15px 0 0 0;
+}
+
+@media screen and (max-width: 769px) {
+  .card__name {
+    font-weight: normal;
+    font-size: 22px;
+    color: #1a1b22;
+    line-height: 24px;
+    margin: 12px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .card__name {
+    font-weight: normal;
+    font-size: 22px;
+    color: #1a1b22;
+    line-height: 24px;
+    margin: 10px 0 0 0;
+  }
+}

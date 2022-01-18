@@ -1,0 +1,19 @@
+.about__text {
+  margin: 24px 0 0 0;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 1023px) {
+  .about__text {
+    margin: 16px 0 0 0;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .about__text {
+    width: 288px;
+  }
+}

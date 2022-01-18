@@ -1,0 +1,59 @@
+/* roboto-slab-regular - latin */
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Roboto-Regular.ttf') format('ttf'); /* IE9 Compat Modes */
+}
+/* roboto-slab-500 - latin */
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  font-style: medium;
+  font-weight: 500;
+  src: url('../fonts/Roboto-Medium.ttf') format('ttf'); /* IE9 Compat Modes */
+}
+/* roboto-slab-900 - latin */
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  font-style: bold;
+  font-weight: 900;
+  src: url('../fonts/Roboto-Bold.ttf') format('ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'Roboto Slab', serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url('RobotoSlab-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Slab', serif;
+  font-style: bold;
+  font-weight: 700;
+  src: url('RobotoSlab-Bold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('Inter-Regular.woff2?v=3.15') format('woff'),
+    url('Inter-Regular.woff?v=3.15') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('Inter-Medium.woff2') format('woff'),
+    url('Inter-Medium.woff') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  src: url('Inter-Black.woff2?v=3.15') format('woff'),
+    url('Inter-Black.woff?v=3.15') format('woff2');
+}

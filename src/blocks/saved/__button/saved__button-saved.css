@@ -1,0 +1,20 @@
+.saved__button-saved {
+  text-decoration: none;
+  color: black;
+  margin: 0 42px 0 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+.saved__button-saved:after {
+  content: '';
+  background: black;
+  position: absolute;
+  bottom: -30px;
+  left: -10px;
+  height: 3px;
+  width: 135px;
+}

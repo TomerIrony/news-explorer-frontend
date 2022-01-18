@@ -1,0 +1,16 @@
+.header__home {
+  height: 80px;
+  width: 73%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 769px) {
+  .header__home {
+    width: 89%;
+    height: 66px;
+    background-repeat: no-repeat;
+  }
+}

@@ -1,0 +1,11 @@
+.header__buttons {
+  display: flex;
+  align-items: center;
+}
+
+/* @media screen and (max-width: 426px) {
+  .header__buttons {
+    display: none;
+  }
+}
+ */

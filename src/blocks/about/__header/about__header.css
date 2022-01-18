@@ -1,0 +1,23 @@
+.about__header {
+  margin: 51px 0 0 0;
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: 500;
+  font-family: 'Roboto Slab', serif;
+  color: #1a1b22;
+}
+
+@media screen and (max-width: 1023px) {
+  .about__header {
+    margin: 40px 0 0 0;
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .about__header {
+    margin: 24px 0 0 0;
+    width: 288px;
+  }
+}

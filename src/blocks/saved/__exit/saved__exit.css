@@ -1,0 +1,8 @@
+.saved__exit {
+  background-image: url('../../../images/exitblack.svg');
+  width: 17.5px;
+  height: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 6px 0 0 16px;
+}

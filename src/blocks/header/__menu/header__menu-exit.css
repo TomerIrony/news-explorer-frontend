@@ -1,0 +1,5 @@
+.header__menu-exit {
+  background-image: url('../../../images/close.svg');
+  width: 24px;
+  height: 24px;
+}

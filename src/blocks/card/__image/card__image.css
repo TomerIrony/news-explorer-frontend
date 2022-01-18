@@ -1,0 +1,22 @@
+.card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card__image:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 769px) {
+  .card__image {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .card__image {
+    width: 100%;
+    height: auto;
+  }
+}

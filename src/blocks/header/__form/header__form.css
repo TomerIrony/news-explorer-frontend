@@ -1,0 +1,9 @@
+.header__form {
+  padding: 48px 0;
+}
+
+@media screen and (max-width: 740px) {
+  .header__form {
+    padding: 121px 0 0 0;
+  }
+}

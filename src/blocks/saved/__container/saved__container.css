@@ -1,0 +1,11 @@
+.saved__container {
+  margin: 40px auto 56px;
+  max-width: 90%;
+}
+
+@media screen and (max-width: 769px) {
+  .saved__container {
+    max-width: 90%;
+    margin: 40px auto 56px;
+  }
+}
