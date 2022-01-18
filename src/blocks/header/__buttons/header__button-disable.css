@@ -1,3 +1,7 @@
 .header__buttons-disable {
   color: #b6bcbf;
 }
+
+.header__buttons-disable:after {
+  display: none;
+}
