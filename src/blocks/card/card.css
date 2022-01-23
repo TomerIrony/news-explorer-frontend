@@ -13,12 +13,14 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  margin-bottom: 16px;
 }
 
 @media screen and (max-width: 769px) {
   .card {
     width: 224px;
     height: 420px;
+    margin-bottom: 8px;
     /* height: max-content; */
     margin: 0 auto;
   }

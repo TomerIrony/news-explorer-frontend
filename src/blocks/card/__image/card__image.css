@@ -2,6 +2,7 @@
   display: block;
   width: 100%;
   height: auto;
+  max-height: 272px;
 }
 
 .card__image:hover {

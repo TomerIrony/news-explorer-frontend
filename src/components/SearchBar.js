@@ -21,6 +21,7 @@ function SearchBar(props) {
         onSubmit={(e) => {
           e.preventDefault();
           props.setSearchShow(true);
+          props.setInputValue(e.target[1].value);
         }}
       >
         <fieldset className="header__form-fieldset">
@@ -36,6 +37,9 @@ function SearchBar(props) {
             type="submit"
             className={buttonState ? 'header__form-btn' : 'header__form-btn'}
             disabled={buttonState ? false : true}
+            onClick={() => {
+              props.setClick(!props.click);
+            }}
           >
             Search
           </button>

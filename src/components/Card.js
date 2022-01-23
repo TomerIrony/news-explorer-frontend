@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function Card(props) {
   const [saveCardPopup, setSaveCardPopup] = useState(false);
   const [mobileMode, setMobileMode] = useState();
+  const [marked, setMarked] = useState(false);
 
   window.addEventListener('resize', () => {
     setMobileMode(window.innerWidth);
   });
 
   return (
-    <article className="card">
+    <article className="card" id={props.cameFromSaved ? props.id : null}>
       <button
         className={
           props.cameFromSaved
             ? 'card__button-saved'
-            : props.marked
+            : marked
             ? 'card__marked'
             : 'card__button'
         }
@@ -25,9 +26,17 @@ function Card(props) {
           setSaveCardPopup(true);
         }}
         onClick={() => {
+          props.cameFromSaved
+            ? props.deleteArticle(props.id)
+            : props.loggedIn
+            ? props.saveArticle(props.card)
+            : console.log();
           if (saveCardPopup) {
             setSaveCardPopup(false);
           }
+          props.loggedIn && !props.cameFromSaved
+            ? setMarked(true)
+            : console.log();
         }}
       />
       {props.cameFromSaved ? (
@@ -50,7 +59,7 @@ function Card(props) {
           )}
 
           <div className="card__keyword">
-            <p>Nature</p>
+            <p>{props.keyword}</p>
           </div>
         </>
       ) : null}
@@ -71,16 +80,14 @@ function Card(props) {
       <img id="cardImage" src={props.src} alt="dd" className="card__image" />
       <div className="card__caption">
         <p className="card__date">{props.date}</p>
+
         <h2 className="card__name">
-          Everyone Needs a Special 'Sit Spot' in Nature
+          {' '}
+          <a href={props.url}>{props.title}</a>
         </h2>
-        <p className="card__text">
-          Ever since I read Richard Louv's influential book, "Last Child in the
-          Woods," the idea of having a special "sit spot" has stuck with me.
-          This advice, which Louv attributes to nature educator Jon Young, is
-          for both adults and children to find...
-        </p>
-        <p className="card__source">treehugger</p>
+
+        <p className="card__text">{props.text}</p>
+        <p className="card__source">{props.source}</p>
       </div>
     </article>
   );

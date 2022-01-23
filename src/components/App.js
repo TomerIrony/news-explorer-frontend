@@ -1,5 +1,5 @@
 import '../pages/App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Main from './Main';
 import SavedNews from './SavedNews';
@@ -137,6 +137,7 @@ function App() {
                 setLoggedIn={setLoggedIn}
                 loggedIn={loggedIn}
                 currentUser={currentUser}
+                jwt={jwt}
               />
             }
             path="/saved-news"
@@ -154,6 +155,7 @@ function App() {
               setSearchShow={setSearchShow}
               searchShow={searchShow}
               screenWidth={screenWidth}
+              jwt={jwt}
             />
           }
         />
