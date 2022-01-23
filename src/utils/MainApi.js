@@ -53,7 +53,7 @@ class mainApi {
 }
 
 const MainApi = new mainApi({
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.news.students.nomoreparties.sbs',
 });
 
 export default MainApi;
