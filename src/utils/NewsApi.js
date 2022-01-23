@@ -13,16 +13,24 @@ class newsApi {
   }
 
   getArticles(q) {
-    return fetch(`${this._url}/everything`, {
-      // Running the request to the newsorg api from my
-      method: 'POST', // backend to insure my apikey is private
-      headers: {
-        'Content-Type': 'application/json',
+    const currentDateObj = new Date();
+    const currentDateJson = JSON.stringify(currentDateObj).split('T');
+    const currentDate = currentDateJson[0].split('"')[1];
+    const d = new Date();
+    d.setDate(d.getDate() - 7);
+    const myJson = JSON.stringify(d).split('T');
+    const date = myJson[0].split('"')[1];
+    return fetch(
+      `https://newsapi.org/v2/everything?q=${q}&from=${date}&to=${currentDate}&pageSize=100&sortBy=popularity&apiKey=552795a1a87c40fab7a83f892eb04f0b`,
+      {
+        method: 'GET',
+        headers: {
+          Accept: '*/*',
+          'Accept-Encoding': 'gzip, deflate, br',
+          Connection: 'keep-alive',
+        },
       },
-      body: JSON.stringify({
-        q,
-      }),
-    }).then(this._checkResponse);
+    ).then(this._checkResponse);
   }
 }
 
