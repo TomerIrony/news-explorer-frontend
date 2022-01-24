@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Card from './Card';
 
 function Search(props) {
-  let articles = props.cards.articles;
-  let i = 0;
+  const articles = props.cards.articles;
 
   const [number, setNumber] = useState(3);
 

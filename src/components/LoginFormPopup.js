@@ -28,8 +28,8 @@ function LoginFormPopup(props) {
   };
 
   const handleOnChange = () => {
-    const email = document.getElementById('signinEmail');
-    const password = document.getElementById('signinPassword');
+    const email = inputRefEmail.current;
+    const password = inputRefPassword.current;
 
     if (password.checkValidity() & email.checkValidity()) {
       props.setButton(false);

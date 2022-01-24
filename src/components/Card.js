@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react/cjs/react.development';
 
 function Card(props) {
   const [saveCardPopup, setSaveCardPopup] = useState(false);
   const [mobileMode, setMobileMode] = useState();
   const [marked, setMarked] = useState(false);
 
-  window.addEventListener('resize', () => {
-    setMobileMode(window.innerWidth);
-  });
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setMobileMode(window.innerWidth);
+    });
+  }, []);
 
   return (
     <article className="card" id={props.cameFromSaved ? props.id : null}>

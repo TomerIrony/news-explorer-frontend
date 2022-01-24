@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import NavigationMobile from './NavigationMobile';
 import Menu from './Menu';
@@ -8,9 +8,11 @@ function SavedNewsHeader(props) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [savedMenu, setSavedMenu] = useState(false);
 
-  window.addEventListener('resize', () => {
-    setScreenWidth(window.innerWidth);
-  });
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setScreenWidth(window.innerWidth);
+    });
+  }, []);
 
   return (
     <div className="">

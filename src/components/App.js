@@ -1,5 +1,5 @@
 import '../pages/App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Main from './Main';
 import SavedNews from './SavedNews';
@@ -18,9 +18,11 @@ function App() {
   const [searchShow, setSearchShow] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  window.addEventListener('resize', () => {
-    setScreenWidth(window.innerWidth);
-  });
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setScreenWidth(window.innerWidth);
+    });
+  }, []);
 
   React.useEffect(() => {
     if (localStorage.getItem('jwt') !== null) {
@@ -42,6 +44,15 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        setIsLoggedInFormOpen(false);
+        setRegisterPopupOpen(false);
+      }
+    });
+  }, []);
+
   function handleError(err) {
     if (err === 'Error: 404 Not Found') {
       setValidationMessage('Inncorrect password or email');
@@ -58,13 +69,6 @@ function App() {
     setIsLoggedInFormOpen(false);
     setRegisterPopupOpen(false);
   }
-
-  window.onkeydown = function (event) {
-    if (event.keyCode === 27) {
-      setIsLoggedInFormOpen(false);
-      setRegisterPopupOpen(false);
-    }
-  };
 
   function handleLogin(email, password) {
     auth

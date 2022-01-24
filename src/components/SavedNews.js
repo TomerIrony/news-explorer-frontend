@@ -18,7 +18,7 @@ function SavedNews(props) {
   useEffect(() => {
     MainApi.getSavedArticles(props.jwt)
       .then((res) => {
-        let body = res;
+        const body = res;
         setCards(body);
       })
       .catch((err) => {
@@ -32,9 +32,11 @@ function SavedNews(props) {
 
   function deleteArticle(cardId) {
     MainApi.deleteArticle(cardId, props.jwt).then((res) => {
-      const card = document.getElementById(cardId);
+      cards.splice(
+        cards.findIndex((a) => a._id === cardId),
+        1,
+      );
       setNumberOfArticles(numberOfArticles - 1);
-      card.remove();
     });
   }
 

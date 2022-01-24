@@ -51,7 +51,8 @@ class Auth {
 }
 
 const auth = new Auth({
-  baseUrl: 'https://api.news.students.nomoreparties.sbs',
+  /* baseUrl: 'https://api.news.students.nomoreparties.sbs', */
+  baseUrl: 'http://localhost:3000',
 });
 
 export default auth;
