@@ -138,9 +138,11 @@ function App() {
           <Route
             element={
               <SavedNews
+                setSearchShow={setSearchShow}
                 setLoggedIn={setLoggedIn}
                 loggedIn={loggedIn}
                 currentUser={currentUser}
+                screenWidth={screenWidth}
                 jwt={jwt}
               />
             }

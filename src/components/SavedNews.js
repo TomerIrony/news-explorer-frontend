@@ -11,6 +11,8 @@ function SavedNews(props) {
   const [cards, setCards] = useState([]);
   const [numberOfArticles, setNumberOfArticles] = useState(cards.length);
 
+  props.setSearchShow(false);
+
   useEffect(() => {
     setNumberOfArticles(cards.length);
   }, [cards.length]);

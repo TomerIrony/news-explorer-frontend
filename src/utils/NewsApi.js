@@ -35,8 +35,8 @@ class newsApi {
 }
 
 const NewsApi = new newsApi({
-  baseUrl: 'https://api.news.students.nomoreparties.sbs',
-  /* baseUrl: 'http://localhost:3000', */
+  /* baseUrl: 'https://api.news.students.nomoreparties.sbs', */
+  baseUrl: 'http://localhost:3000',
 });
 
 export default NewsApi;

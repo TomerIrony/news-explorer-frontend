@@ -28,6 +28,7 @@ function Search(props) {
           ? props.cards.map((card, i) => {
               return (
                 <Card
+                  screenWidth={props.screenWidth}
                   deleteArticle={props.deleteArticle}
                   id={card._id}
                   date={card.date}

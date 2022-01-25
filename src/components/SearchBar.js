@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function SearchBar(props) {
-  const [buttonState, setButtonState] = useState(false);
-  function handleChange() {
-    const searchInput = document.getElementById('searchBar');
-    setButtonState(searchInput.checkValidity());
-  }
   return (
     <div className="header__search">
       <div className="header__container">
@@ -30,13 +25,11 @@ function SearchBar(props) {
             type="text"
             placeholder="Enter topic"
             required
-            onChange={handleChange}
             id="searchBar"
           />
           <button
             type="submit"
-            className={buttonState ? 'header__form-btn' : 'header__form-btn'}
-            disabled={buttonState ? false : true}
+            className="header__form-btn"
             onClick={() => {
               props.setClick(!props.click);
             }}

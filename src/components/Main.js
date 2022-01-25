@@ -94,6 +94,7 @@ function Main(props) {
         cards ? (
           <Search
             cards={cards}
+            screenWidth={props.screenWidth}
             setIsLoggedInFormOpen={props.setIsLoggedInFormOpen}
             loggedIn={props.loggedIn}
             tempArray={tempArray}

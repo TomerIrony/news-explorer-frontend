@@ -3,14 +3,7 @@ import { useEffect } from 'react/cjs/react.development';
 
 function Card(props) {
   const [saveCardPopup, setSaveCardPopup] = useState(false);
-  const [mobileMode, setMobileMode] = useState();
   const [marked, setMarked] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      setMobileMode(window.innerWidth);
-    });
-  }, []);
 
   return (
     <article className="card" id={props.cameFromSaved ? props.id : null}>
@@ -44,7 +37,7 @@ function Card(props) {
       />
       {props.cameFromSaved ? (
         <>
-          {mobileMode < 884 || mobileMode === undefined ? null : (
+          {props.screenWidth < 884 || props.screenWidth === undefined ? null : (
             <div
               className={`card__login ${
                 saveCardPopup ? `card__login-show` : null
