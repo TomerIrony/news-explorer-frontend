@@ -126,10 +126,11 @@ function App() {
       />
       <Routes>
         <Route
+          exact
           path="/saved-news"
           element={
             <ProtectedRoute
-              path="/saved-news"
+              path="/"
               screenWidth={screenWidth}
               loggedIn={loggedIn}
             />
@@ -150,8 +151,7 @@ function App() {
           />
         </Route>
         <Route
-          path="*"
-          excat={true}
+          path="/"
           element={
             <Main
               setIsLoggedInFormOpen={setIsLoggedInFormOpen}

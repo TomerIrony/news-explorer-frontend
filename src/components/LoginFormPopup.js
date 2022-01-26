@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRef } from 'react';
-import { useState } from 'react/cjs/react.development';
 import PopupWithForm from './PopupWithForm';
 import InfoTooltip from './InfoTooltip';
 

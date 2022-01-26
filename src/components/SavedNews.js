@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import SavedNewsHeader from './SavedNewsHeader';
 import Footer from './Footer';
 import Search from './Search';
 import Temp from './Temp';
 import FooterMobile from './FooterMobile';
 import MainApi from '../utils/MainApi';
-import { useState } from 'react/cjs/react.development';
 
 function SavedNews(props) {
   const [cards, setCards] = useState([]);

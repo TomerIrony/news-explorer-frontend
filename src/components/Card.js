@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react/cjs/react.development';
 
 function Card(props) {
   const [saveCardPopup, setSaveCardPopup] = useState(false);
