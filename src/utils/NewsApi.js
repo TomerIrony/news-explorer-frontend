@@ -21,8 +21,7 @@ class newsApi {
     const myJson = JSON.stringify(d).split('T');
     const date = myJson[0].split('"')[1];
     return fetch(
-      `https://newsapi.org/v2/everything?q=${q}&from=${date}&to=${currentDate}&pageSize=100&sortBy=popularity&apiKey=552795a1a87c40fab7a83f892eb04f0b`,
-      {
+      `https://nomoreparties.co/news/v2/everything?q=${q}&from=${date}&to=${currentDate}&apiKey=552795a1a87c40fab7a83f892eb04f0b`,      {
         method: 'GET',
         headers: {
           Accept: '*/*',

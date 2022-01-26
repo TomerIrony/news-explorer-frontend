@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 
 function SearchBar(props) {
+  const [searchValue, setSearchValue] = useState()
+  const searchInput = useRef()
+
+  function onChange(){
+    setSearchValue(searchInput.current.value)
+  }
   return (
     <div className="header__search">
       <div className="header__container">
@@ -26,6 +32,11 @@ function SearchBar(props) {
             placeholder="Enter topic"
             required
             id="searchBar"
+            ref={searchInput}
+            value={searchValue || ''}
+            onChange={() => {
+              onChange()
+            }}
           />
           <button
             type="submit"
