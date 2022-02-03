@@ -1,4 +1,4 @@
-class Auth {
+class mainApi {
   constructor({ baseUrl, headers }) {
     this._url = baseUrl;
     this._headers = headers;
@@ -12,36 +12,38 @@ class Auth {
     }
   }
 
-  register(password, email, name) {
-    return fetch(`${this._url}/signup`, {
+  saveArticle(JWT, keyword, title, text, date, source, link, image) {
+    return fetch(`${this._url}/articles`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${JWT}`,
       },
       body: JSON.stringify({
-        password,
-        email,
-        name,
+        keyword,
+        title,
+        text,
+        date,
+        source,
+        link,
+        image,
       }),
     }).then(this._checkResponse);
   }
 
-  signin(email, password) {
-    return fetch(`${this._url}/signin`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    }).then(this._checkResponse);
-  }
-
-  getUser(JWT) {
-    return fetch(`${this._url}/users/me`, {
+  getSavedArticles(JWT) {
+    return fetch(`${this._url}/articles`, {
       method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JWT}`,
+      },
+    }).then(this._checkResponse);
+  }
+
+  deleteArticle(cardId, JWT) {
+    return fetch(`${this._url}/articles/${cardId}`, {
+      method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${JWT}`,
@@ -50,9 +52,9 @@ class Auth {
   }
 }
 
-const auth = new Auth({
+const MainApi = new mainApi({
   baseUrl: 'https://api.news.students.nomoreparties.sbs',
   /* baseUrl: 'http://localhost:3000', */
 });
 
-export default auth;
+export default MainApi;

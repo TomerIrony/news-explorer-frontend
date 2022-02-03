@@ -18,9 +18,11 @@ function App() {
   const [searchShow, setSearchShow] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  window.addEventListener('resize', () => {
-    setScreenWidth(window.innerWidth);
-  });
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setScreenWidth(window.innerWidth);
+    });
+  }, []);
 
   React.useEffect(() => {
     if (localStorage.getItem('jwt') !== null) {
@@ -42,6 +44,15 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        setIsLoggedInFormOpen(false);
+        setRegisterPopupOpen(false);
+      }
+    });
+  }, []);
+
   function handleError(err) {
     if (err === 'Error: 404 Not Found') {
       setValidationMessage('Inncorrect password or email');
@@ -58,13 +69,6 @@ function App() {
     setIsLoggedInFormOpen(false);
     setRegisterPopupOpen(false);
   }
-
-  window.onkeydown = function (event) {
-    if (event.keyCode === 27) {
-      setIsLoggedInFormOpen(false);
-      setRegisterPopupOpen(false);
-    }
-  };
 
   function handleLogin(email, password) {
     auth
@@ -122,10 +126,11 @@ function App() {
       />
       <Routes>
         <Route
+          exact
           path="/saved-news"
           element={
             <ProtectedRoute
-              path="/saved-news"
+              path="/"
               screenWidth={screenWidth}
               loggedIn={loggedIn}
             />
@@ -134,17 +139,19 @@ function App() {
           <Route
             element={
               <SavedNews
+                setSearchShow={setSearchShow}
                 setLoggedIn={setLoggedIn}
                 loggedIn={loggedIn}
                 currentUser={currentUser}
+                screenWidth={screenWidth}
+                jwt={jwt}
               />
             }
             path="/saved-news"
           />
         </Route>
         <Route
-          path="*"
-          excat={true}
+          path="/"
           element={
             <Main
               setIsLoggedInFormOpen={setIsLoggedInFormOpen}
@@ -154,6 +161,7 @@ function App() {
               setSearchShow={setSearchShow}
               searchShow={searchShow}
               screenWidth={screenWidth}
+              jwt={jwt}
             />
           }
         />

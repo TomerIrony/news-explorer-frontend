@@ -53,7 +53,12 @@ function Header(props) {
           )}
           <div className="header__underline" />
 
-          <SearchBar setSearchShow={props.setSearchShow} />
+          <SearchBar
+            setInputValue={props.setInputValue}
+            setSearchShow={props.setSearchShow}
+            setClick={props.setClick}
+            click={props.click}
+          />
         </div>
       </div>
     </>

@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRef } from 'react';
-import { useState } from 'react/cjs/react.development';
 import PopupWithForm from './PopupWithForm';
 import InfoTooltip from './InfoTooltip';
 
@@ -9,6 +8,9 @@ function LoginFormPopup(props) {
   const [emailError, setEmailError] = useState();
   const [passwordError, setPasswordError] = useState();
   const [usernameError, setUsernameError] = useState();
+  const [emailValue, setEmailValue] = useState();
+  const [passwordValue, setPasswordValue] = useState();
+  const [usernameValue, setUsernameValue] = useState();
 
   const inputRefEmail = useRef();
   const inputRefPassword = useRef();
@@ -28,8 +30,10 @@ function LoginFormPopup(props) {
   };
 
   const handleOnChange = () => {
-    const email = document.getElementById('signinEmail');
-    const password = document.getElementById('signinPassword');
+    const email = inputRefEmail.current;
+    const password = inputRefPassword.current;
+    setEmailValue(email.value);
+    setPasswordValue(password.value);
 
     if (password.checkValidity() & email.checkValidity()) {
       props.setButton(false);
@@ -38,8 +42,9 @@ function LoginFormPopup(props) {
     }
 
     if (signUp) {
-      const username = document.getElementById('signinUsername');
+      const username = inputRefName.current;
       setUsernameError(username.validationMessage);
+      setUsernameValue(username.value);
       if (
         password.checkValidity() &
         email.checkValidity() &
@@ -97,6 +102,7 @@ function LoginFormPopup(props) {
           name="email"
           placeholder="Enter email"
           id="signinEmail"
+          value={emailValue || ''}
         />
         <span className="form__validation_show">{emailError}</span>
         <span className="form__input-title">Password</span>
@@ -109,6 +115,7 @@ function LoginFormPopup(props) {
           placeholder="Enter password"
           id="signinPassword"
           onChange={handleOnChange}
+          value={passwordValue || ''}
           minLength={8}
         />
         <span className="form__validation_show">{passwordError}</span>
@@ -122,6 +129,7 @@ function LoginFormPopup(props) {
             className="form__text-input form__input"
             type="text"
             ref={inputRefName}
+            value={usernameValue || ''}
             required
             name="name"
             placeholder="Enter your usename"

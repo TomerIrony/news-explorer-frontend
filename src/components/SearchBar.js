@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 function SearchBar(props) {
-  const [buttonState, setButtonState] = useState(false);
-  function handleChange() {
-    const searchInput = document.getElementById('searchBar');
-    setButtonState(searchInput.checkValidity());
+  const [searchValue, setSearchValue] = useState()
+  const searchInput = useRef()
+
+  function onChange(){
+    setSearchValue(searchInput.current.value)
   }
   return (
     <div className="header__search">
@@ -21,6 +22,7 @@ function SearchBar(props) {
         onSubmit={(e) => {
           e.preventDefault();
           props.setSearchShow(true);
+          props.setInputValue(e.target[1].value);
         }}
       >
         <fieldset className="header__form-fieldset">
@@ -29,13 +31,19 @@ function SearchBar(props) {
             type="text"
             placeholder="Enter topic"
             required
-            onChange={handleChange}
             id="searchBar"
+            ref={searchInput}
+            value={searchValue || ''}
+            onChange={() => {
+              onChange()
+            }}
           />
           <button
             type="submit"
-            className={buttonState ? 'header__form-btn' : 'header__form-btn'}
-            disabled={buttonState ? false : true}
+            className="header__form-btn"
+            onClick={() => {
+              props.setClick(!props.click);
+            }}
           >
             Search
           </button>
